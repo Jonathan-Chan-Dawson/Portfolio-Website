@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Your Name — Portfolio</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1 class="logo">Your Name</h1>
+      <nav>
+        <button class="nav-toggle" aria-expanded="false">Menu</button>
+        <ul class="nav-list">
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <h2>Hi — I'm Your Name</h2>
+      <p>Short tagline describing you (developer, designer, student).</p>
+      <a class="cta" href="#projects">See my work</a>
+    </section>
+
+    <section id="projects" class="container projects-section">
+      <div class="filters">
+        <button data-filter="all" class="active">All</button>
+        <button data-filter="personal">Personal</button>
+        <button data-filter="school">School</button>
+        <button data-filter="career">Career</button>
+        <button data-filter="misc">Misc</button>
+      </div>
+
+      <div class="projects-grid" id="projectsGrid">
+        <!-- Example project card -->
+        <article class="project-card" data-category="personal">
+          <img src="assets/example-1.jpg" alt="Project screenshot" />
+          <div class="project-info">
+            <h3>Personal Project 1</h3>
+            <p>Short description of the project.</p>
+            <a href="personal/project1/index.html" class="project-link">View</a>
+          </div>
+        </article>
+        <!-- Add more project cards here -->
+      </div>
+    </section>
+
+    <section id="about" class="container about">
+      <h2>About</h2>
+      <p>Short bio — skills, interests, education.</p>
+    </section>
+
+    <section id="contact" class="container contact">
+      <h2>Contact</h2>
+      <p>Email: you@example.com</p>
+    </section>
+  </main>
+
+  <footer class="site-footer container">
+    <small>© Your Name • Built with HTML & CSS</small>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
