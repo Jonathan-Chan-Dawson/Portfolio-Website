@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Playground // Jonathan Dawson</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <header class="site-header">
+    <a class="logo" href="../index.html" aria-label="Jonathan Dawson home"><span class="logo-mark">J</span><span>JONATHAN<span class="blink">_</span></span></a>
+    <nav class="top-tabs" aria-label="Main navigation">
+      <a class="tab" href="../index.html">01 / Home</a><a class="tab" href="../index.html#projects">02 / Work</a><a class="tab" href="vault.html">03 / Vault</a><a class="tab active" href="playground.html">04 / Playground</a><a class="tab" href="../index.html#contact">05 / Contact</a>
+    </nav><div class="status"><i></i> ONLINE</div>
+  </header>
+  <main class="container section-block playground"><div class="section-heading"><div><p class="eyebrow">TINY MACHINES</p><h1>Playground<span class="blink">_</span></h1></div><span class="section-index">04 / 05</span></div><div class="tools-grid">
+    <article class="tool-panel"><div class="tool-title"><span class="tool-number">01</span><h3>Impossible Question</h3></div><p>Make a choice. Any choice.</p><div class="question-stage"><span>Do you like surprises?</span><div><button class="yes-btn" id="yesBtn">YES</button><button class="no-btn" id="noBtn">NO</button></div></div><small id="questionStatus">One of these buttons is lying.</small></article>
+    <article class="tool-panel"><div class="tool-title"><span class="tool-number">02</span><h3>Number Oracle</h3></div><p>Ask the void for a number.</p><div class="number-display" id="randomNumber">?</div><button class="tool-button" id="numberBtn">Generate number <span>+</span></button></article>
+    <article class="tool-panel terminal-panel"><div class="tool-title"><span class="tool-number">03</span><h3>Micro Terminal</h3></div><div class="terminal-output" id="terminalOutput"><span>JONATHAN_OS v1.0.5</span><br />Type a message and print it.</div><div class="terminal-input"><span>&gt;</span><input id="terminalInput" value="hello world" aria-label="Terminal message" /><button id="printBtn">PRINT</button></div></article>
+    <article class="tool-panel clicker-panel"><div class="tool-title"><span class="tool-number">04</span><h3>Button Economy</h3></div><p>Press button. Gain power. Repeat.</p><div class="clicker-score"><span id="clickCount">0</span><small>CLICKS</small></div><button class="big-click" id="clickButton">CLICK</button><button class="tool-button upgrade-button" id="upgradeButton">Upgrade finger <span>10</span></button><div class="upgrade-status" id="upgradeStatus">Level 0 / +1 per click</div></article>
+  </div></main>
+  <footer class="site-footer container"><small>© 2026 JONATHAN DAWSON / Built with curiosity</small></footer>
+  <div class="toast" id="toast" role="status"></div><script src="../js/script.js"></script>
+</body>
+</html>
