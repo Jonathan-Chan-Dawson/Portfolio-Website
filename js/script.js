@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const toolsGrid = document.querySelector('.tools-grid');
   if (toolsGrid) {
-    const toolNames = ['Question', 'Oracle', 'Terminal', 'Clicker'];
+    const toolNames = ['Question', 'Oracle', 'Terminal', 'Clicker', 'View all'];
     const toolTabs = document.createElement('div');
     toolTabs.className = 'tool-tabs';
     toolTabs.setAttribute('role', 'tablist');
@@ -22,7 +22,9 @@ document.addEventListener('DOMContentLoaded', () => {
       const tab = event.target.closest('.tool-tab');
       if (!tab) return;
       toolTabs.querySelectorAll('.tool-tab').forEach((item) => { item.classList.toggle('active', item === tab); item.setAttribute('aria-selected', String(item === tab)); });
-      panels.forEach((panel) => panel.classList.toggle('active', panel.dataset.toolPanel === tab.dataset.tool));
+      const showAll = tab.dataset.tool === '4';
+      toolsGrid.classList.toggle('view-all', showAll);
+      panels.forEach((panel) => panel.classList.toggle('active', showAll || panel.dataset.toolPanel === tab.dataset.tool));
     });
     const questionInput = document.createElement('input');
     questionInput.className = 'question-input';

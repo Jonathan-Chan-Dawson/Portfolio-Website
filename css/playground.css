@@ -1,0 +1,50 @@
+.playground .tools-grid {
+  display: block;
+  min-height: 360px;
+}
+
+.playground .tool-panel.active {
+  display: block;
+  min-height: 360px;
+}
+
+.playground .tools-grid.view-all {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 17px;
+  min-height: 0;
+}
+
+.playground .tools-grid.view-all .tool-panel {
+  display: block;
+  min-height: 250px;
+  animation: none;
+}
+
+.contact-band {
+  clear: both;
+  position: relative;
+  z-index: 1;
+}
+
+.site-footer {
+  clear: both;
+  position: relative;
+  z-index: 2;
+  min-height: 88px;
+  align-items: center;
+}
+
+@media (max-width: 760px) {
+  .playground .tools-grid.view-all {
+    grid-template-columns: 1fr;
+  }
+
+  .playground .tool-panel.active {
+    min-height: 320px;
+  }
+
+  .playground .tools-grid.view-all .tool-panel {
+    min-height: 250px;
+  }
+}
