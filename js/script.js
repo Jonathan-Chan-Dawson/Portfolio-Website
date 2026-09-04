@@ -7,6 +7,32 @@ document.addEventListener('DOMContentLoaded', () => {
     showToast.timer = window.setTimeout(() => toast.classList.remove('show'), 3200);
   };
 
+  const toolsGrid = document.querySelector('.tools-grid');
+  if (toolsGrid) {
+    const toolNames = ['Question', 'Oracle', 'Terminal', 'Clicker'];
+    const toolTabs = document.createElement('div');
+    toolTabs.className = 'tool-tabs';
+    toolTabs.setAttribute('role', 'tablist');
+    toolTabs.setAttribute('aria-label', 'Playground tools');
+    toolTabs.innerHTML = toolNames.map((name, index) => `<button class="tool-tab${index === 0 ? ' active' : ''}" role="tab" aria-selected="${index === 0}" data-tool="${index}">0${index + 1} / ${name}</button>`).join('');
+    toolsGrid.before(toolTabs);
+    const panels = [...toolsGrid.querySelectorAll('.tool-panel')];
+    panels.forEach((panel, index) => { panel.classList.toggle('active', index === 0); panel.dataset.toolPanel = String(index); });
+    toolTabs.addEventListener('click', (event) => {
+      const tab = event.target.closest('.tool-tab');
+      if (!tab) return;
+      toolTabs.querySelectorAll('.tool-tab').forEach((item) => { item.classList.toggle('active', item === tab); item.setAttribute('aria-selected', String(item === tab)); });
+      panels.forEach((panel) => panel.classList.toggle('active', panel.dataset.toolPanel === tab.dataset.tool));
+    });
+    const questionInput = document.createElement('input');
+    questionInput.className = 'question-input';
+    questionInput.id = 'questionInput';
+    questionInput.value = 'can you be my date?';
+    questionInput.setAttribute('aria-label', 'Question text');
+    const questionText = document.querySelector('#questionText') || document.querySelector('.question-stage span');
+    if (questionText) { questionText.textContent = questionInput.value; questionText.closest('.tool-panel').querySelector('.question-stage').before(questionInput); questionInput.addEventListener('input', () => { questionText.textContent = questionInput.value || ' '; }); }
+  }
+
   document.querySelectorAll('.filters button').forEach((button) => {
     button.addEventListener('click', () => {
       document.querySelectorAll('.filters button').forEach((item) => item.classList.remove('active'));
